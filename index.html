@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nosso Amor</title>
+<style>
+  body {
+    background: #000;
+    color: #00aaff;
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  #contador {
+    font-size: 2.2rem;
+    margin-top: 40px;
+    color: #66ccff;
+    animation: fogoAzul 2s infinite alternate ease-in-out;
+    text-shadow: 0 0 10px #66ccff, 0 0 20px #33aaff, 0 0 35px #0099ff;
+  }
+
+  #texto-romantico {
+    margin-top: 20px;
+    font-size: 1.9rem;
+    color: #ffffff;
+    line-height: 1.4;
+  }
+
+  #foto {
+    margin-top: 25px;
+    width: 90%;
+    max-width: 350px;
+    border-radius: 12px;
+  }
+
+  #contador2anos {
+    font-size: 1.4rem;
+    margin-top: 20px;
+    color: #6ecbff;
+    text-shadow: 0 0 10px #6ecbff, 0 0 20px #6ecbff;
+  }
+
+  @keyframes fogoAzul {
+    0% { text-shadow: 0 0 10px #66ccff, 0 0 20px #33aaff, 0 0 35px #0099ff; transform: scale(1);}    
+    50% { text-shadow: 0 0 15px #99ddff, 0 0 30px #66ccff, 0 0 50px #33aaff; transform: scale(1.03);}    
+    100%{ text-shadow: 0 0 25px #bbf0ff, 0 0 45px #66ccff, 0 0 70px #0099ff; transform: scale(1.05);}  
+  }
+  /* Estrelas cadentes */
+  .estrela {
+    position: fixed;
+    top: -10px;
+    width: 2px;
+    height: 2px;
+    background: white;
+    opacity: 0.8;
+    box-shadow: 0 0 6px white;
+    animation: cair 1.8s linear infinite;
+  }
+
+  @keyframes cair {
+    0% { transform: translateY(0) translateX(0); opacity: 1; }
+    100% { transform: translateY(120vh) translateX(40vw); opacity: 0; }
+  }
+</style>
+</head>
+<body>
+
+<h1 id="contador">Henrique e Domynnycky - Carregando...</h1>
+<p id="texto-romantico">isso é apenas o inicio de algo q sera eterno, me sinto feliz todos os dias de tá do seu lado... e cada momento contigo é um presente que eu quero guardar pra sempre.</p>
+<img id="foto" src="nossa.foto.jpg" alt="nós dois" />
+
+<div id="contador2anos"></div>
+
+<script>
+// CONTADOR DIAS JUNTOS
+const inicioNamoro = new Date("2024-09-18");
+function atualizarContador() {
+  const hoje = new Date();
+  const diferenca = hoje - inicioNamoro;
+  const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+  document.getElementById("contador").textContent = `Henrique e Domynnycky — Estamos juntos há ${dias} dias ❤`;
+}
+atualizarContador();
+
+// CONTAGEM PARA 2 ANOS
+const aniversario = new Date("2024-09-18");
+const doisAnos = new Date("2026-09-18");
+function atualizar2Anos() {
+  const agora = new Date();
+  const diff = doisAnos - agora;
+
+  const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const horas = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutos = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  const segundos = Math.floor((diff % (1000 * 60)) / 1000);
+
+  document.getElementById("contador2anos").textContent =
+    `Faltam ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos para completarmos 2 anos juntos 💙`;
+}
+setInterval(atualizar2Anos, 1000);
+atualizar2Anos();
+  // Estrelas cadentes no fundo
+  function criarEstrela() {
+    const estrela = document.createElement("div");
+    estrela.classList.add("estrela");
+
+    estrela.style.left = Math.random() * 100 + "vw";
+    estrela.style.animationDuration = (Math.random() * 1 + 1.2) + "s";
+
+    document.body.appendChild(estrela);
+
+    setTimeout(() => estrela.remove(), 2000);
+  }
+
+  setInterval(criarEstrela, 300);
+</script>
+
+  <!-- Texto romântico adicional -->
+  <p id="texto-final" style="margin-top:40px; color:#003d66; font-size:1.6rem; line-height:1.5; padding:0 15px;">
+    Eu sei que brigamos várias vezes, mas eu nunca perdi a esperança no nosso relacionamento... você é a coisa mais importante da minha vida e isso nunca vai mudar. Quero viver muitas coisas ao seu lado, e uma delas é ver nosso neném nascer. Criar uma família com você é tudo que eu sempre sonhei. Eu te amo demais, minha princesa.
+  </p>
+
+  <!-- Contagem para 9 meses -->
+  <div id="contadorBebe" style="margin-top:20px; font-size:1.3rem; font-weight:bold; background: linear-gradient(90deg, #ff66cc, #66ccff); -webkit-background-clip: text; color: transparent; text-shadow: 0 0 10px rgba(255,255,255,0.4);"></div>
+
+  <!-- Ícone pezinho -->
+  <div style="margin-top:25px; display:flex; justify-content:center;">
+  <svg width="85" height="85" viewBox="0 0 512 512" fill="white" xmlns="http://www.w3.org/2000/svg" style="filter: drop-shadow(0 0 10px white) drop-shadow(0 0 20px white);">
+    <path d="M342.6 245.4c-24.5-24.5-64.3-24.5-88.8 0l-94.4 94.4c-35.1 35.1-35.1 92.1 0 127.3 35.1 35.1 92.1 35.1 127.3 0l94.4-94.4c24.5-24.5 24.5-64.3 0-88.8z"/>
+    <circle cx="160" cy="140" r="48"/>
+    <circle cx="256" cy="100" r="45"/>
+    <circle cx="345" cy="125" r="40"/>
+    <circle cx="400" cy="190" r="38"/>
+  </svg>
+</div>
+
+<script>
+  // Contagem para o nascimento do bebê (8 meses restantes)
+  const dataAtual = new Date();
+  const nascimento = new Date();
+  nascimento.setMonth(nascimento.getMonth() + 8);
+
+  function atualizarBebe() {
+    const agora = new Date();
+    const diff = nascimento - agora;
+
+    const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const horas = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutos = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const segundos = Math.floor((diff % (1000 * 60)) / 1000);
+
+    document.getElementById("contadorBebe").textContent =
+      `Faltam ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos para nosso neném nascer 💕`;
+  }
+
+  setInterval(atualizarBebe, 1000);
+  atualizarBebe();
+</script>
+
+</body>
+</html>
